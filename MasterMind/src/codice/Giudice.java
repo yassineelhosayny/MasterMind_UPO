@@ -71,6 +71,16 @@ public class Giudice {
 		}
 		return count;
 	}
+	public static String genTarget() {
+		Random random = new Random();
+		StringBuffer result;
+		do {
+			result = new StringBuffer();
+			for (int i = 1; i <= LUNGHEZZA; i++)
+				result.append(CHARS[random.nextInt(CHARS.length)]);
+		} while (!Giudice.valida(result.toString()));
+		return result.toString();
+	}
     
        
 }
